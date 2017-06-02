@@ -96,7 +96,7 @@
                         <td style="color: white">${est.getNombre()}</td>
                         <td style="color: white">${est.getApellido()}</td>
                         <td style="color: white">${est.getTelefono()}</td>
-                        <td><a class="btn btn-danger" href="/borrar?mat=${est.getMatricula()}">Eliminar</button></td>
+                        <td><a class="btn btn-danger" href="/borrar?mat=${est.getMatricula()}">Eliminar</a></td>
                     </tr>
                     </#list>
                 </#if>
