@@ -2,8 +2,12 @@ group 'pucmm.web'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'application'
 
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+mainClassName = "main.Main"
 
 repositories {
     mavenCentral()
@@ -21,4 +25,8 @@ dependencies {
     compile group: 'com.sparkjava', name: 'spark-template-freemarker', version: '2.5.5'
 
 
+}
+
+task stage {
+    dependsOn installDist
 }
