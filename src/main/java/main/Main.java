@@ -21,6 +21,7 @@ import static spark.Spark.*;
 public class Main {
     public static void main(String[] args) {
         ArrayList<Estudiante> estudiantes = new ArrayList<>();
+        port(getPuertoHeroku());
 
         staticFiles.location("plantilla");
 
@@ -109,4 +110,12 @@ public class Main {
         },freeMarkerEngine);
 
     }
+    static int getPuertoHeroku() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567; //En caso de no pasar la información, toma el puerto 4567
+    }
+
 }
